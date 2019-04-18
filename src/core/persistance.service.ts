@@ -21,7 +21,6 @@ export class DynamoDBService {
   public client: DynamoDB;  // Lower-level DynamoDB API
   public mapper: DataMapper;  // Higher-level Data mapper API
   constructor() {
-    console.log("Config %s", JSON.stringify(DYNAMODB_CONFIG))
     this.client = new DynamoDB(DYNAMODB_CONFIG);
     this.mapper = new DataMapper({ client: this.client });
   }

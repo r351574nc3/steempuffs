@@ -68,10 +68,6 @@ export class OAuth2 implements NestMiddleware {
 
         const credentials = this.credentialsFrom(Buffer.from(token, "base64").toString());
         // check for wif
-        if (Steem.auth.isWif(credentials.wif)) {
-            const pubWif = Steem.auth.wifToPublic(credentials.wif);
-            
-        }
         return next();
     }
 

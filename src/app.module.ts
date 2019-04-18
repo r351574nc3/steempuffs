@@ -2,6 +2,9 @@ import { HttpModule, Module, NestModule, MiddlewareConsumer } from '@nestjs/comm
 import { AppController } from './app.controller';
 import { OAuthController } from './oauth.controller';
 import { AppService } from './app.service';
+import { StravaAccess } from './strava/access.middleware';
+import { GithubModule } from './github/github.module';
+import { GithubController } from './github/github.controller';
 import { StravaModule } from './strava/strava.module';
 import { SteemitModule } from './steemit/steemit.module';
 import { OAuth2 } from './core/auth.middleware';
@@ -12,6 +15,7 @@ import { PreferencesService } from './steemit/preferences.service';
 
 @Module({
   imports: [
+    GithubModule,
     HttpModule,
     JwtService,
     StravaModule,
@@ -19,6 +23,7 @@ import { PreferencesService } from './steemit/preferences.service';
   ],
   controllers: [
     AppController,
+    GithubController,
     OAuthController,
     SteemitController
   ],
