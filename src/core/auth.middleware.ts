@@ -62,7 +62,7 @@ export class OAuth2 implements NestMiddleware {
         catch (e) {
           // squash exception
         }
-
+        console.log("Authorizing path %s", req.path);
         // This means a steem key is being used in the authorization header
         // the format is something standard like username:wif
 

@@ -5,6 +5,8 @@ import { AppService } from './app.service';
 import { StravaAccess } from './strava/access.middleware';
 import { GithubModule } from './github/github.module';
 import { GithubController } from './github/github.controller';
+import { SlackController } from './slack/slack.controller';
+import { SlackModule } from './slack/slack.module';
 import { StravaModule } from './strava/strava.module';
 import { SteemitModule } from './steemit/steemit.module';
 import { OAuth2 } from './core/auth.middleware';
@@ -18,6 +20,7 @@ import { PreferencesService } from './steemit/preferences.service';
     GithubModule,
     HttpModule,
     JwtService,
+    SlackModule,
     StravaModule,
     SteemitModule
   ],
@@ -25,6 +28,7 @@ import { PreferencesService } from './steemit/preferences.service';
     AppController,
     GithubController,
     OAuthController,
+    SlackController,
     SteemitController
   ],
   providers: [

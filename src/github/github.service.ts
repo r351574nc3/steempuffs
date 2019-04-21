@@ -1,7 +1,5 @@
 import { HttpService, Injectable, InternalServerErrorException, Logger } from '@nestjs/common';
-import { StravaRefreshResult, StravaTokenResult } from "../dto";
 import { PreferencesService } from '../steemit/preferences.service';
-import { strava_cid, strava_secret } from "../config";
 import { AxiosResponse } from "axios";
 import { private_key, github_app_id } from "../config";
 import { DynamoDBService } from '../core/persistance.service';
@@ -65,8 +63,37 @@ export class GithubService {
         this.put(installation.app_id, installation.id, installation);
     }
 
+    /**
+     * 
+     */
     handlePush(payload: any) {
         
+    }
+
+    /**
+     * Pull requests can be created/modified/completed. When a PR is completed/merged into
+     * the master, files that are changed should be examined. If changes include README.md
+     * in the root, then a post should be made to steemit.
+     * 
+     * Whenever a PR is created, a blog post is created.
+     */
+    handlePullRequest(payload: any) {
+
+    }
+
+    /**
+     * Upon creation of an issue, a blog post is created.
+     */
+    handleIssue(payload: any) {
+
+    }
+
+    /**
+     * On comment, use preference in steempuffs to determine posting key to be used to post
+     * back to steemit.
+     */
+    handleComment(payload: any) {
+
     }
 
     private async getInstallations(app_id: number, id: number): Promise<InstallationEntry> {

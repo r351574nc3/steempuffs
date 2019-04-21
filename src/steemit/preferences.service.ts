@@ -32,7 +32,9 @@ export class PreferencesService {
     async fetchBy(principalId: string, preferenceKey: string): Promise<Preference> {
         try {
             return await this.getPreference(principalId, preferenceKey);
-        } catch (err) {
+        }
+        catch (err) {
+            console.log("%s", JSON.stringify(err));
             throw new NotFoundException('Preference not found');
         }
     }
