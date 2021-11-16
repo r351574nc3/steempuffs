@@ -41,7 +41,7 @@
     "@nestjs/swagger": "^2.5.1",
     "@nestjs/websockets": "^5.7.3",
     "@types/jsonwebtoken": "^8.3.2",
-    "aws-sdk": "^2.422.0",
+    "aws-sdk": "^2.814.0",
     "bluebird": "^3.5.4",
     "dotenv": "^7.0.0",
     "jsonwebtoken": "^8.5.1",
